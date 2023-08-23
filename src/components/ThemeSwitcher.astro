@@ -1,0 +1,68 @@
+<svg
+  id="moon"
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-tabler icon-tabler-moon-stars hidden w-7 stroke-blue-400 stroke-1"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+  <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+  <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+<svg
+  id="sun"
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon-tabler icon-tabler-sunset-2 hidden w-7 stroke-orange-400 stroke-1"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M3 13h1"></path>
+  <path d="M20 13h1"></path>
+  <path d="M5.6 6.6l.7 .7"></path>
+  <path d="M18.4 6.6l-.7 .7"></path>
+  <path d="M8 13a4 4 0 1 1 8 0"></path>
+  <path d="M3 17h18"></path>
+  <path d="M7 20h5"></path>
+  <path d="M16 20h1"></path>
+  <path d="M12 5v-1"></path>
+</svg>
+
+<script>
+  const sun = document.getElementById("sun");
+  const moon = document.getElementById("moon");
+
+  if (sun && moon) {
+    const init = () => {
+      if (localStorage.theme === "dark") setTheme("dark");
+      else setTheme("light");
+    };
+
+    const setTheme = (theme: "dark" | "light", withLocalStorage: boolean = false) => {
+      if (withLocalStorage) localStorage.theme = theme === "dark" ? "dark" : "light";
+
+      moon.style.display = theme === "dark" ? "inline-block" : "none";
+      sun.style.display = theme === "dark" ? "none" : "inline-block";
+    };
+
+    const toggleTheme = () => {
+      if (localStorage.theme === "dark") setTheme("light", true);
+      else setTheme("dark", true);
+
+      document.documentElement.classList.toggle("dark");
+    };
+
+    init();
+
+    sun.addEventListener("click", toggleTheme);
+    moon.addEventListener("click", toggleTheme);
+  }
+</script>
