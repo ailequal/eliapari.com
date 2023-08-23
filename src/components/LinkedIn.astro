@@ -1,0 +1,29 @@
+---
+export interface Props {
+  size?: string;
+  strokeWidth?: string;
+  color?: string;
+  ariaHidden?: boolean;
+}
+
+const { size = "w-7", strokeWidth = "stroke-1", color = "stroke-black", ariaHidden = false } = Astro.props;
+
+// @link https://tablericons.com
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class={`icon icon-tabler icon-tabler-brand-linkedin inline-block ${size} ${strokeWidth} ${color}`}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden={ariaHidden}
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+  <line x1="8" y1="11" x2="8" y2="16"></line>
+  <line x1="8" y1="8" x2="8" y2="8.01"></line>
+  <line x1="12" y1="16" x2="12" y2="11"></line>
+  <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+</svg>

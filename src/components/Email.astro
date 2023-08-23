@@ -1,0 +1,26 @@
+---
+export interface Props {
+  size?: string;
+  strokeWidth?: string;
+  color?: string;
+  ariaHidden?: boolean;
+}
+
+const { size = "w-7", strokeWidth = "stroke-1", color = "stroke-black", ariaHidden = false } = Astro.props;
+
+// @link https://tablericons.com
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class={`icon icon-tabler icon-tabler-mail inline-block ${size} ${strokeWidth} ${color}`}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden={ariaHidden}
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+  <polyline points="3 7 12 13 21 7"></polyline>
+</svg>
