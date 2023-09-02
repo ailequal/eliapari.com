@@ -1,7 +1,31 @@
 ---
+import Container from "./Container.astro";
+import Email from "./Email.astro";
+import GitHub from "./GitHub.astro";
+import Link from "./Link.astro";
+import LinkedIn from "./LinkedIn.astro";
+import Twitter from "./Twitter.astro";
+import YouTube from "./YouTube.astro";
+
 const today = new Date();
+
+// TODO: Add the email section for contact.
 ---
 
 <footer>
-  &copy;{today.getFullYear()} | Elia Pari
+  <Container>
+    <div class="block sm:flex sm:items-center sm:justify-between">
+      <div class="flex items-center gap-7 mb-4 sm:mb-0">
+        <Link href="#" target="_self"><Email /></Link>
+        <Link href="https://github.com/ailequal" target="_blank"><GitHub /></Link>
+        <Link href="https://www.linkedin.com/in/ailequal" target="_blank"><LinkedIn /></Link>
+        <Link href="https://twitter.com/ailequal" target="_blank"><Twitter /></Link>
+        <Link href="https://www.youtube.com/@ailequal" target="_blank"><YouTube /></Link>
+      </div>
+
+      <div>
+        <span>&copy;{today.getFullYear()} | Elia Pari</span>
+      </div>
+    </div>
+  </Container>
 </footer>

@@ -1,6 +1,6 @@
 ---
 import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
+import Link from "./Link.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 
 // TODO: Move the social links into the footer?!!
@@ -12,12 +12,12 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   </h2>
 
   <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="https://github.com/ailequal" target="_blank">GitHub</HeaderLink>
-    <HeaderLink href="https://www.linkedin.com/in/ailequal" target="_blank">LinkedIn</HeaderLink>
-    <HeaderLink href="https://twitter.com/ailequal" target="_blank">Twitter</HeaderLink>
+    <Link href="/">Home</Link>
+    <Link href="/blog">Blog</Link>
+    <Link href="/about">About</Link>
+    <Link href="https://github.com/ailequal" target="_blank">GitHub</Link>
+    <Link href="https://www.linkedin.com/in/ailequal" target="_blank">LinkedIn</Link>
+    <Link href="https://twitter.com/ailequal" target="_blank">Twitter</Link>
     <ThemeSwitcher />
   </nav>
 </header>
