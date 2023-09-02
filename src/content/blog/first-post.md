@@ -1,7 +1,7 @@
 ---
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 08 2022"
+pubDate: "Sep 08 2022"
 heroImage: "/blog/first-post/tour-d-eiffel-1447025.jpg"
 ---
 

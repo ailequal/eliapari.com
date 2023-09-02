@@ -15,21 +15,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <body class="flex flex-col min-h-screen">
     <Header />
 
-    <main class="flex-grow mb-6">
-      <Container size="sm" marginBottom="mb-6">
-        <div class="flex flex-col items-center">
-          <img class="mb-4" width={180} height={180} src="/elia-pari.jpg" alt={SITE_TITLE} />
+    <main class="flex-grow mb-8">
+      <Container size="sm" marginBottom="mb-16">
+        <section class="flex flex-col items-center">
+          <img class="mb-8" width={240} height={240} src="/elia-pari.jpg" alt={SITE_TITLE} />
 
-          <h1 class="mb-2 text-3xl">{SITE_TITLE}</h1>
-  
-          <h2>Web Developer</h2>
-        </div>
+          <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
+
+          <h2 class="text-4xl font-bold">Web Developer</h2>
+        </section>
       </Container>
 
       <Container size="sm">
-        <h3>Somenthing about yesterday</h3>
+        <section class="prose m-auto dark:prose-invert md:prose-lg lg:prose-xl">
+          <h3>Somenthing about this</h3>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam, pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et. Vivamus hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis. Suspendisse et mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus sagittis quis massa. Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus, euismod vel viverra ut, lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna porttitor. Aenean non sollicitudin enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis, sollicitudin sit amet varius nec, malesuada ut urna.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam, pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et. Vivamus hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis. Suspendisse et mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus sagittis quis massa. Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus, euismod vel viverra ut, lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna porttitor. Aenean non sollicitudin enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis, sollicitudin sit amet varius nec, malesuada ut urna.</p>
+        </section>
       </Container>
     </main>
 
