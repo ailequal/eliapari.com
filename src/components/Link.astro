@@ -6,6 +6,6 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 ---
 
-<a href={href} class={className} {...props}>
+<a href={href} class={`inline-block ${className}`} {...props}>
   <slot />
 </a>

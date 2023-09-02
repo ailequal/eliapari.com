@@ -14,11 +14,11 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
         <Link class="font-bold" href="/">{SITE_TITLE}</Link>
       </div>
 
-      <div class="flex items-center gap-6">
-        <Link class="font-bold" href="/blog">Blog</Link>
-        <Link class="font-bold" href="/about">About</Link>
-        <ThemeSwitcher />
-      </div>
+      <ul class="flex items-center gap-6">
+        <li><Link class="font-bold" href="/blog">Blog</Link></li>
+        <li><Link class="font-bold" href="/about">About</Link></li>
+        <li><ThemeSwitcher /></li>
+      </ul>
     </nav>
   </Container>
 </header>
