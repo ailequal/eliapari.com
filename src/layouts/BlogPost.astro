@@ -16,12 +16,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="ae-body">
     <Header />
 
-    <main class="flex-grow mb-8">
+    <main class="mb-8 flex-grow">
       <Container>
-        <article class="prose m-auto dark:prose-invert md:prose-lg lg:prose-xl">
+        <article class="ae-prose">
           {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 
           <h1 class="title">{title}</h1>

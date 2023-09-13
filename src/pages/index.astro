@@ -6,16 +6,16 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="ae-body">
     <Header />
 
-    <main class="flex-grow mb-8">
+    <main class="mb-8 flex-grow">
       <Container size="sm" marginBottom="mb-16">
         <section class="flex flex-col items-center">
           <img class="mb-8" width={240} height={240} src="/elia-pari.jpg" alt={SITE_TITLE} />
@@ -23,14 +23,29 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
 
           <h2 class="text-4xl font-bold">Web Developer</h2>
+
+          <div class="h-12 w-12 bg-ae-black"></div>
+          <div class="h-12 w-12 bg-ae-white"></div>
+          <div class="h-12 w-12 bg-ae-red"></div>
+          <div class="h-12 w-12 bg-ae-blue"></div>
+          <div class="h-12 w-12 bg-ae-pink"></div>
         </section>
       </Container>
 
       <Container size="sm">
-        <section class="prose m-auto dark:prose-invert md:prose-lg lg:prose-xl">
+        <section class="ae-prose">
           <h3>Somenthing about this</h3>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam, pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et. Vivamus hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis. Suspendisse et mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus sagittis quis massa. Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus, euismod vel viverra ut, lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna porttitor. Aenean non sollicitudin enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis, sollicitudin sit amet varius nec, malesuada ut urna.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam,
+            pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et.
+            Vivamus hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis.
+            Suspendisse et mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus
+            sagittis quis massa. Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus,
+            euismod vel viverra ut, lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna
+            porttitor. Aenean non sollicitudin enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis,
+            sollicitudin sit amet varius nec, malesuada ut urna.
+          </p>
         </section>
       </Container>
     </main>

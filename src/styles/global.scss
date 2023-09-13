@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+@layer components {
+  .ae-body {
+    @apply flex
+    min-h-screen
+    flex-col
+    bg-ae-white
+    text-ae-black
+    dark:bg-ae-black
+    dark:text-ae-white;
+  }
+
+  .ae-prose {
+    @apply prose
+    m-auto
+    dark:prose-invert
+    md:prose-lg
+    lg:prose-xl
+    prose-headings:text-ae-red
+    prose-p:text-ae-red
+    prose-a:text-ae-red
+    prose-blockquote:text-ae-red
+    prose-figure:text-ae-black
+    prose-figcaption:text-ae-black
+    prose-strong:text-ae-red
+    prose-em:text-ae-red
+    prose-code:text-ae-red
+    prose-pre:text-ae-black
+    prose-ol:text-ae-red
+    prose-ul:text-ae-red
+    prose-li:text-ae-red
+    prose-li:marker:text-ae-red
+    prose-table:bg-ae-blue
+    prose-thead:bg-ae-blue prose-tr:bg-ae-blue
+    prose-th:bg-ae-blue
+    prose-td:bg-ae-blue
+    prose-img:border-8
+    prose-img:border-ae-pink
+    prose-video:text-ae-black
+    prose-hr:border-8
+    prose-hr:border-ae-pink
+    dark:prose-headings:text-ae-white;
+  }
+}
+
+// TODO: Find a way to style these elements.
+// prose-time:text-ae-black
+// prose-kbd:text-ae-black
+// prose-mark:text-ae-black
+
+// TODO: Random emojy "go back" when using <city> inside a md file??

@@ -11,26 +11,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="ae-body">
     <Header />
 
-    <main class="flex-grow mb-8">
+    <main class="mb-8 flex-grow">
       <Container size="sm">
         <section>
           <h1 class="mb-16 text-center text-6xl font-bold">Blog</h1>
 
-          <ul class="flex gap-8 flex-col">
+          <ul class="flex flex-col gap-8">
             {
               posts.map((post) => (
                 <li class="flex flex-col gap-1">
                   <FormattedDate class="text-lg" date={post.data.pubDate} />
-                  <Link class="text-xl font-bold" href={`/blog/${post.slug}/`}>{post.data.title}</Link>
+                  <Link class="text-xl font-bold" href={`/blog/${post.slug}/`}>
+                    {post.data.title}
+                  </Link>
                 </li>
               ))
             }
