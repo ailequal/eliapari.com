@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
+    "prettier:check": "prettier --check .",
+    "prettier:check-fix": "prettier --check . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.3",
