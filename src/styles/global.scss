@@ -28,37 +28,51 @@ body {
     dark:prose-invert
     md:prose-lg
     lg:prose-xl
-    prose-headings:text-ae-red
-    prose-p:text-ae-red
-    prose-a:text-ae-red
-    prose-blockquote:text-ae-red
-    prose-figure:text-ae-black
+    prose-headings:text-ae-black
+    prose-p:text-ae-black
+    prose-a:text-ae-pink
+    prose-blockquote:border-ae-pink
+    prose-figure:bg-transparent
     prose-figcaption:text-ae-black
-    prose-strong:text-ae-red
-    prose-em:text-ae-red
-    prose-code:text-ae-red
-    prose-pre:text-ae-black
-    prose-ol:text-ae-red
-    prose-ul:text-ae-red
-    prose-li:text-ae-red
-    prose-li:marker:text-ae-red
-    prose-table:bg-ae-blue
-    prose-thead:bg-ae-blue
-    prose-tr:bg-ae-blue
-    prose-th:bg-ae-blue
-    prose-td:bg-ae-blue
-    prose-img:border-8
-    prose-img:border-ae-pink
-    prose-video:text-ae-black
-    prose-hr:border-8
-    prose-hr:border-ae-pink
-    dark:prose-headings:text-ae-white;
+    prose-strong:text-ae-black
+    prose-em:text-ae-black
+    prose-code:text-ae-black
+    prose-pre:bg-ae-blue
+    prose-ol:text-ae-black
+    prose-ul:text-ae-black
+    prose-li:text-ae-black
+    prose-li:marker:text-ae-black
+    prose-table:bg-ae-white
+    prose-thead:bg-ae-white
+    prose-tr:bg-ae-white
+    prose-th:bg-ae-white
+    prose-td:bg-ae-white
+    prose-hr:border-ae-black
+    dark:prose-headings:text-ae-white
+    dark:prose-p:text-ae-white
+    dark:prose-a:text-ae-pink
+    dark:prose-blockquote:border-ae-pink
+    dark:prose-figure:bg-transparent
+    dark:prose-figcaption:text-ae-white
+    dark:prose-strong:text-ae-white
+    dark:prose-em:text-ae-white
+    dark:prose-code:text-ae-white
+    dark:prose-pre:bg-ae-blue
+    dark:prose-ol:text-ae-white
+    dark:prose-ul:text-ae-white
+    dark:prose-li:text-ae-white
+    dark:prose-li:marker:text-ae-white
+    dark:prose-table:bg-ae-black
+    dark:prose-thead:bg-ae-black
+    dark:prose-tr:bg-ae-black
+    dark:prose-th:bg-ae-black
+    dark:prose-td:bg-ae-black
+    dark:prose-hr:border-ae-white;
   }
 }
 
-// TODO: Find a way to style these elements.
-// prose-time:text-ae-black
-// prose-kbd:text-ae-black
-// prose-mark:text-ae-black
-
-// TODO: Random emojy "go back" when using <city> inside a md file??
+// These rules have not been used yet (and the relative dark version).
+// prose-img:border-4
+// prose-img:border-ae-red
+// prose-video:border-4
+// prose-video:border-ae-red

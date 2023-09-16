@@ -19,8 +19,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   <body class="ae-body">
     <Header />
 
-    <main class="mb-8 flex-grow">
-      <Container>
+    <main class="mb-12 flex-grow">
+      <Container size="sm">
         <article class="ae-prose">
           {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 

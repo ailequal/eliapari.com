@@ -44,6 +44,8 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Blockquote with attribution
 
+<!-- TODO: Random emoji "go back" automatically added when using <cite> inside a md file?? -->
+
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
