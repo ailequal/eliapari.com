@@ -9,6 +9,7 @@ import Header from "../components/Header.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+// The heroImage should always have a 16:9 aspect ratio (1280x720 at least).
 ---
 
 <html lang="en">
@@ -22,9 +23,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <main class="mb-12 flex-grow">
       <Container size="sm">
         <section class="prose prose-ae m-auto dark:prose-invert md:prose-lg lg:prose-xl">
-          <!-- TODO: Check which format to always use for the main blog post image. -->
-          <!-- TODO: What about the other blog post images inside the article??... -->
-          {heroImage && <img class="mt-0" width={720} height={360} src={heroImage} alt="" />}
+          {heroImage && <img class="mt-0" src={heroImage} alt="" />}
 
           <h1 class="title">{title}</h1>
 

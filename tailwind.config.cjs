@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  // TODO: Move the colors object outside the extend section when the default one are not needed anymore.
   theme: {
     extend: {
       screens: {
@@ -11,6 +10,7 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         ["ae-black"]: "#393939",
+        ["ae-gray"]: "#747369",
         ["ae-white"]: "#E8E6DF",
         ["ae-red"]: "#F2777A",
         ["ae-yellow"]: "#FFCC66",

@@ -10,6 +10,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "/social.jpg" } = Astro.props;
+// The image should always have a 16:9 aspect ratio (1280x720 at least).
 
 // TODO: Double check this component setup.
 ---
