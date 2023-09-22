@@ -21,7 +21,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
     <main class="mb-12 flex-grow">
       <Container size="sm">
-        <article class="ae-prose">
+        <section class="prose prose-ae m-auto dark:prose-invert md:prose-lg lg:prose-xl">
+          <!-- TODO: Check which format to always use for the main blog post image. -->
+          <!-- TODO: What about the other blog post images inside the article??... -->
           {heroImage && <img class="mt-0" width={720} height={360} src={heroImage} alt="" />}
 
           <h1 class="title">{title}</h1>
@@ -40,7 +42,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           <hr />
 
           <slot />
-        </article>
+
+          <hr />
+        </section>
       </Container>
     </main>
 
