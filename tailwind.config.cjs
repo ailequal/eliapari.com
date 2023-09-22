@@ -11,11 +11,11 @@ module.exports = {
         DEFAULT: {
           css: {
             time: {
-              color: "#515151",
+              color: "#393939",
             },
             kbd: {
               backgroundColor: "#E8E6DF",
-              color: "#515151",
+              color: "#393939",
             },
             mark: {
               backgroundColor: "#CC99CC",
@@ -28,7 +28,7 @@ module.exports = {
               color: "#E8E6DF",
             },
             kbd: {
-              backgroundColor: "#515151",
+              backgroundColor: "#393939",
               color: "#E8E6DF",
             },
             mark: {
@@ -40,7 +40,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        ["ae-black"]: "#515151",
+        ["ae-black"]: "#393939",
         ["ae-white"]: "#E8E6DF",
         ["ae-red"]: "#F2777A",
         ["ae-yellow"]: "#FFCC66",

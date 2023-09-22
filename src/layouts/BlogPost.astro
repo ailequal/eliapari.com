@@ -22,7 +22,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <main class="mb-12 flex-grow">
       <Container size="sm">
         <article class="ae-prose">
-          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+          {heroImage && <img class="mt-0" width={720} height={360} src={heroImage} alt="" />}
 
           <h1 class="title">{title}</h1>
 
