@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
+import CalendarPub from "../components/CalendarPub.astro";
+import CalendarUpdated from "../components/CalendarUpdated.astro";
 import Clock from "../components/Clock.astro";
 import Container from "../components/Container.astro";
 import Footer from "../components/Footer.astro";
@@ -28,29 +30,33 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
 
           <h1 class="title">{title}</h1>
 
-          <div>
-            Published on: &nbsp;
-            <FormattedDate date={pubDate} />
+          <div class="flex flex-wrap items-center justify-around gap-4">
+            <div class="cursor-default" title="Published on">
+              <CalendarPub />
+               &nbsp;
+              <FormattedDate date={pubDate} />
+            </div>
+
+            {
+              updatedDate && (
+                <div class="cursor-default" title="Updated on">
+                  <CalendarUpdated />
+                  &nbsp;
+                  <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+
+            {
+              readingTime && (
+                <div class="cursor-default" title="Estimated reading time">
+                  <Clock />
+                  &nbsp;
+                  <span>{readingTime}</span>
+                </div>
+              )
+            }
           </div>
-
-          {
-            updatedDate && (
-              <div>
-                Updated on: &nbsp; &nbsp;
-                <FormattedDate date={updatedDate} />
-              </div>
-            )
-          }
-
-          {
-            readingTime && (
-              <div>
-                <Clock />
-                &nbsp;
-                <span>{readingTime}</span>
-              </div>
-            )
-          }
 
           <hr />
 
