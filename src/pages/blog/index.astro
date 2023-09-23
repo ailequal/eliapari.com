@@ -30,6 +30,7 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
               posts.map((post) => (
                 <li class="flex flex-col gap-1">
                   <FormattedDate class="text-lg" date={post.data.pubDate} />
+
                   <Link class="text-xl font-bold" href={`/blog/${post.slug}/`}>
                     {post.data.title}
                   </Link>
