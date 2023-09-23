@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
+import CalendarPub from "../../components/CalendarPub.astro";
 import Container from "../../components/Container.astro";
 import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -29,9 +30,13 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
             {
               posts.map((post) => (
                 <li class="flex flex-col gap-1">
-                  <FormattedDate class="text-lg" date={post.data.pubDate} />
+                  <div class="flex cursor-default items-center" title="Published on">
+                    <CalendarPub />
+                    &nbsp;
+                    <FormattedDate class="text-lg" date={post.data.pubDate} />
+                  </div>
 
-                  <Link class="text-xl font-bold" href={`/blog/${post.slug}/`}>
+                  <Link class="w-fit text-xl font-bold" href={`/blog/${post.slug}/`}>
                     {post.data.title}
                   </Link>
                 </li>
