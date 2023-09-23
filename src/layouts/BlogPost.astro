@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import CalendarPub from "../components/CalendarPub.astro";
@@ -26,7 +27,7 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
     <main class="mb-12 flex-grow">
       <Container size="sm">
         <section class="prose prose-ae m-auto dark:prose-invert md:prose-lg lg:prose-xl">
-          {heroImage && <img class="mt-0" src={heroImage} alt="" />}
+          {heroImage && <Image class="mt-0" width={heroImage.width} height={heroImage.height} src={heroImage} alt="" />}
 
           <h1 class="title">{title}</h1>
 

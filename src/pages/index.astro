@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import EliaPari from "../assets/elia-pari.jpg";
 import BaseHead from "../components/BaseHead.astro";
 import Container from "../components/Container.astro";
 import Footer from "../components/Footer.astro";
@@ -18,7 +20,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     <main class="mb-12 flex-grow">
       <Container size="sm" marginBottom="mb-16">
         <section class="flex flex-col items-center">
-          <img class="mb-8" width={240} height={240} src="/elia-pari.jpg" alt={SITE_TITLE} />
+          <Image class="mb-8" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
 
           <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
 
