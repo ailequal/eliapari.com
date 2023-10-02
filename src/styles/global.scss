@@ -18,7 +18,11 @@ body {
     flex-col
     bg-ae-white
     text-ae-black
+    selection:bg-ae-yellow
+    selection:text-ae-black
     dark:bg-ae-black
-    dark:text-ae-white;
+    dark:text-ae-white
+    dark:selection:bg-ae-yellow
+    dark:selection:text-ae-black;
   }
 }
