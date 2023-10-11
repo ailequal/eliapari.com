@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
+        ["ae-ailequal"]: "007bad",
         ["ae-black"]: "#393939",
         ["ae-gray"]: "#747369",
         ["ae-white"]: "#E8E6DF",
