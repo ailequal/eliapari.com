@@ -20,6 +20,7 @@ const blog = defineCollection({
           message: "The heroImage must always have a 16:9 aspect ratio (1280x720 at least).",
         })
         .optional(),
+      heroAlt: z.string().optional(),
       readingTime: z.string().optional(),
     }),
 });

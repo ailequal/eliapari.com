@@ -12,7 +12,7 @@ import Header from "../components/Header.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt, readingTime } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,7 +26,17 @@ const { title, description, pubDate, updatedDate, heroImage, readingTime } = Ast
     <main class="mb-12 flex-grow">
       <Container size="sm">
         <section class="prose prose-ae m-auto dark:prose-invert md:prose-lg lg:prose-xl">
-          {heroImage && <Image class="mt-0" width={heroImage.width} height={heroImage.height} src={heroImage} alt="" />}
+          {
+            heroImage && (
+              <Image
+                class="mt-0"
+                width={heroImage.width}
+                height={heroImage.height}
+                src={heroImage || "#"}
+                alt={heroAlt || ""}
+              />
+            )
+          }
 
           <h1 class="title">{title}</h1>
 
