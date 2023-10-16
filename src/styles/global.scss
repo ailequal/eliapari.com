@@ -29,4 +29,13 @@ body {
     dark:selection:bg-ae-yellow
     dark:selection:text-ae-black;
   }
+
+  .ae-prose {
+    @apply prose
+    prose-ae
+    m-auto
+    dark:prose-invert
+    md:prose-lg
+    lg:prose-xl;
+  }
 }
