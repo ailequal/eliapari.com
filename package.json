@@ -9,29 +9,27 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettier:write": "prettier --write .",
-    "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
-    "prettier:check": "prettier --check .",
-    "prettier:check-fix": "prettier --check . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
+    "prettier:check": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.2",
+    "@astrojs/mdx": "^1.1.5",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.3.0",
+    "astro": "^3.5.5",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "sass": "^1.69.3"
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "sass": "^1.69.5"
   },
   "engines": {
-    "npm": ">=9.0.0 <10.0.0",
-    "node": ">=18.0.0 <19.0.0"
+    "npm": ">=10.0.0 <11.0.0",
+    "node": ">=20.0.0 <21.0.0"
   }
 }
