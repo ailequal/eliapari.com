@@ -10,5 +10,10 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime], // https://docs.astro.build/en/recipes/reading-time
     shikiConfig: { theme: "dark-plus" }, // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
   },
-  integrations: [sitemap(), tailwind()],
+  integrations: [
+    sitemap({
+      filter: (page) => page !== "https://www.eliapari.com/contact-me/success/",
+    }),
+    tailwind(),
+  ],
 });
