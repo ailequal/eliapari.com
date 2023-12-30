@@ -1,0 +1,55 @@
+---
+
+---
+
+<form
+  class="flex flex-col gap-6"
+  data-netlify="true"
+  netlify-honeypot
+  name="contact-me"
+  method="POST"
+  action="/contact-me/success"
+>
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+
+  <input type="hidden" name="form-name" value="contact-me" />
+
+  <fieldset class="flex flex-col gap-1">
+    <label for="name">Name</label>
+    <input
+      class="bg-ae-black text-ae-white dark:bg-ae-white dark:text-ae-black rounded-md"
+      id="name"
+      type="text"
+      name="name"
+      required
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-1">
+    <label for="email">Email</label>
+    <input
+      class="bg-ae-black text-ae-white dark:bg-ae-white dark:text-ae-black rounded-md"
+      id="email"
+      type="email"
+      name="email"
+      required
+    />
+  </fieldset>
+
+  <fieldset class="flex flex-col gap-1">
+    <label for="message">Message</label>
+    <textarea
+      class="bg-ae-black text-ae-white dark:bg-ae-white dark:text-ae-black rounded-md"
+      id="message"
+      rows="5"
+      wrap="soft"
+      name="message"
+      required></textarea>
+  </fieldset>
+
+  <button class="font-bold" type="submit">Submit</button>
+</form>
