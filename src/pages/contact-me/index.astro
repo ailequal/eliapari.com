@@ -1,31 +1,16 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Container from "../../components/Container.astro";
 import ContactMeForm from "../../components/ContactMeForm.astro";
-import Footer from "../../components/Footer.astro";
-import Header from "../../components/Header.astro";
+import Container from "../../components/Container.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Main from "../../layouts/Main.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<Main title={`Contact me - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <Container size="sm">
+    <section class="ae-prose">
+      <h1>Contact me</h1>
 
-  <body class="ae-body">
-    <Header />
-
-    <main class="mb-12 flex-grow">
-      <Container size="sm">
-        <section class="ae-prose">
-          <h1>Contact me</h1>
-
-          <ContactMeForm />
-        </section>
-      </Container>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <ContactMeForm />
+    </section>
+  </Container>
+</Main>

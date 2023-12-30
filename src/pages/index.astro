@@ -1,61 +1,46 @@
 ---
 import { Image } from "astro:assets";
 import EliaPari from "../assets/elia-pari.jpg";
-import BaseHead from "../components/BaseHead.astro";
 import Container from "../components/Container.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Main from "../layouts/Main.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<Main title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Container size="sm" marginBottom="mb-16">
+    <section class="flex flex-col items-center">
+      <Image class="mb-8" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
 
-  <body class="ae-body">
-    <Header />
+      <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
 
-    <main class="mb-12 flex-grow">
-      <Container size="sm" marginBottom="mb-16">
-        <section class="flex flex-col items-center">
-          <Image class="mb-8" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
+      <h2 class="mb-16 text-4xl font-bold">Web Developer</h2>
 
-          <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
+      <div class="flex rounded-sm border-2 border-ae-black dark:border-ae-white">
+        <div class="h-12 w-12 bg-ae-black"></div>
+        <div class="h-12 w-12 bg-ae-gray"></div>
+        <div class="h-12 w-12 bg-ae-white"></div>
+        <div class="h-12 w-12 bg-ae-red"></div>
+        <div class="h-12 w-12 bg-ae-yellow"></div>
+        <div class="h-12 w-12 bg-ae-blue"></div>
+        <div class="h-12 w-12 bg-ae-pink"></div>
+      </div>
+    </section>
+  </Container>
 
-          <h2 class="mb-16 text-4xl font-bold">Web Developer</h2>
+  <Container size="sm">
+    <section class="ae-prose">
+      <h3>Somenthing about this</h3>
 
-          <div class="flex rounded-sm border-2 border-ae-black dark:border-ae-white">
-            <div class="h-12 w-12 bg-ae-black"></div>
-            <div class="h-12 w-12 bg-ae-gray"></div>
-            <div class="h-12 w-12 bg-ae-white"></div>
-            <div class="h-12 w-12 bg-ae-red"></div>
-            <div class="h-12 w-12 bg-ae-yellow"></div>
-            <div class="h-12 w-12 bg-ae-blue"></div>
-            <div class="h-12 w-12 bg-ae-pink"></div>
-          </div>
-        </section>
-      </Container>
-
-      <Container size="sm">
-        <section class="ae-prose">
-          <h3>Somenthing about this</h3>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam,
-            pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et.
-            Vivamus hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis.
-            Suspendisse et mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus
-            sagittis quis massa. Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus,
-            euismod vel viverra ut, lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna
-            porttitor. Aenean non sollicitudin enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis,
-            sollicitudin sit amet varius nec, malesuada ut urna.
-          </p>
-        </section>
-      </Container>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam,
+        pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et. Vivamus
+        hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis. Suspendisse et
+        mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus sagittis quis massa.
+        Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus, euismod vel viverra ut,
+        lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna porttitor. Aenean non sollicitudin
+        enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis, sollicitudin sit amet varius nec, malesuada
+        ut urna.
+      </p>
+    </section>
+  </Container>
+</Main>

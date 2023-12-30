@@ -1,33 +1,18 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
 import Container from "../../components/Container.astro";
-import Footer from "../../components/Footer.astro";
-import Header from "../../components/Header.astro";
 import Link from "../../components/Link.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Main from "../../layouts/Main.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<Main title={`Success - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <Container size="sm">
+    <section class="ae-prose">
+      <h1>Submission received!!</h1>
 
-  <body class="ae-body">
-    <Header />
+      <p>Thank you for reaching me out! I'll get back to you ASAP.</p>
 
-    <main class="mb-12 flex-grow">
-      <Container size="sm">
-        <section class="ae-prose">
-          <h1>Submission received!!</h1>
-
-          <p>Thank you for reaching me out! I'll get back to you ASAP.</p>
-
-          <p>While waiting, you could check out some of mine <Link href="/blog" target="_self">blog posts</Link>!</p>
-        </section>
-      </Container>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <p>While waiting, you could check out some of mine <Link href="/blog" target="_self">blog posts</Link>!</p>
+    </section>
+  </Container>
+</Main>

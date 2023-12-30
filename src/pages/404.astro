@@ -1,45 +1,30 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import Container from "../components/Container.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import Link from "../components/Link.astro";
 import Sword from "../components/Sword.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Main from "../layouts/Main.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<Main title={`404 - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <Container size="sm">
+    <section class="ae-prose">
+      <h1 class="text-center">404</h1>
 
-  <body class="ae-body">
-    <Header />
+      <blockquote class="text-4xl">
+        <p>
+          It's dangerous to go alone! Take this.
+          <br />
+          —
+          <cite>Old Man</cite>
+        </p>
+      </blockquote>
 
-    <main class="mb-12 flex-grow">
-      <Container size="sm">
-        <section class="ae-prose">
-          <h1 class="text-center">404</h1>
-
-          <blockquote class="text-4xl">
-            <p>
-              It's dangerous to go alone! Take this.
-              <br />
-               —
-              <cite>Old Man</cite>
-            </p>
-          </blockquote>
-
-          <div class="text-center">
-            <Link href="/">
-              <Sword color="stroke-ae-pink" size="w-48" />
-            </Link>
-          </div>
-        </section>
-      </Container>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <div class="text-center">
+        <Link href="/">
+          <Sword color="stroke-ae-pink" size="w-48" />
+        </Link>
+      </div>
+    </section>
+  </Container>
+</Main>
