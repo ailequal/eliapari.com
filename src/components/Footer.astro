@@ -5,8 +5,7 @@ import Feed from "./Feed.astro";
 import GitHub from "./GitHub.astro";
 import Link from "./Link.astro";
 import LinkedIn from "./LinkedIn.astro";
-import Twitter from "./Twitter.astro";
-import YouTube from "./YouTube.astro";
+import Mastodon from "./Mastodon.astro";
 
 const today = new Date();
 ---
@@ -34,20 +33,19 @@ const today = new Date();
         </li>
 
         <li>
+          <Link
+            href="https://continuousdelivery.social/@ailequal"
+            target="_blank"
+            title="Mastodon"
+            aria-label="Mastodon"
+          >
+            <Mastodon size="w-8" />
+          </Link>
+        </li>
+
+        <li>
           <Link href="https://www.linkedin.com/in/ailequal" target="_blank" title="LinkedIn" aria-label="LinkedIn">
             <LinkedIn size="w-8" />
-          </Link>
-        </li>
-
-        <li>
-          <Link href="https://twitter.com/ailequal" target="_blank" title="Twitter" aria-label="Twitter">
-            <Twitter size="w-8" />
-          </Link>
-        </li>
-
-        <li>
-          <Link href="https://www.youtube.com/@ailequal" target="_blank" title="YouTube" aria-label="YouTube">
-            <YouTube size="w-8" />
           </Link>
         </li>
       </ul>
