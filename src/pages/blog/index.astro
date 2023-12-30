@@ -7,7 +7,9 @@ import Link from "../../components/Link.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Main from "../../layouts/Main.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog", (post) => !post.data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <Main title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>

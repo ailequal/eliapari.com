@@ -7,7 +7,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog", (post) => !post.data.draft);
 
   return rss({
     title: SITE_TITLE,
