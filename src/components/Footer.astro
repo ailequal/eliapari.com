@@ -1,6 +1,7 @@
 ---
 import Container from "./Container.astro";
 import Email from "./Email.astro";
+import Feed from "./Feed.astro";
 import GitHub from "./GitHub.astro";
 import Link from "./Link.astro";
 import LinkedIn from "./LinkedIn.astro";
@@ -15,27 +16,37 @@ const today = new Date();
     <div class="block py-2 text-lg xsm:flex xsm:items-center xsm:justify-between">
       <ul class="mb-6 flex items-center justify-center gap-7 xsm:mb-0 lg:gap-12">
         <li>
-          <Link href="/contact-me" target="_self" aria-label="Contact me">
+          <Link href="/contact-me" target="_self" title="Contact me" aria-label="Contact me">
             <Email size="w-8" />
           </Link>
         </li>
+
         <li>
-          <Link href="https://github.com/ailequal" target="_blank" aria-label="GitHub">
+          <Link href="/feed.xml" target="_self" title="Feed" aria-label="Feed">
+            <Feed size="w-8" />
+          </Link>
+        </li>
+
+        <li>
+          <Link href="https://github.com/ailequal" target="_blank" title="GitHub" aria-label="GitHub">
             <GitHub size="w-8" />
           </Link>
         </li>
+
         <li>
-          <Link href="https://www.linkedin.com/in/ailequal" target="_blank" aria-label="LinkedIn">
+          <Link href="https://www.linkedin.com/in/ailequal" target="_blank" title="LinkedIn" aria-label="LinkedIn">
             <LinkedIn size="w-8" />
           </Link>
         </li>
+
         <li>
-          <Link href="https://twitter.com/ailequal" target="_blank" aria-label="Twitter">
+          <Link href="https://twitter.com/ailequal" target="_blank" title="Twitter" aria-label="Twitter">
             <Twitter size="w-8" />
           </Link>
         </li>
+
         <li>
-          <Link href="https://www.youtube.com/@ailequal" target="_blank" aria-label="YouTube">
+          <Link href="https://www.youtube.com/@ailequal" target="_blank" title="YouTube" aria-label="YouTube">
             <YouTube size="w-8" />
           </Link>
         </li>
