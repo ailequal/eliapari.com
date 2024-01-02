@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import EliaPari from "../assets/elia-pari.jpg";
 import Container from "../components/Container.astro";
+import Link from "../components/Link.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Main from "../layouts/Main.astro";
 ---
@@ -9,7 +10,7 @@ import Main from "../layouts/Main.astro";
 <Main title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <Container size="sm" marginBottom="mb-16">
     <section class="flex flex-col items-center">
-      <Image class="mb-8" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
+      <Image class="mb-8 rounded-sm" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
 
       <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
 
@@ -29,18 +30,16 @@ import Main from "../layouts/Main.astro";
 
   <Container size="sm">
     <section class="ae-prose">
-      <h3>Somenthing about this</h3>
+      <p>
+        This is my little corner on the web where I <Link href="/blog" target="_self">write</Link> about geeky things that
+        I might find interesting or useful.
+      </p>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel pretium enim. Aenean nec enim aliquam,
-        pharetra elit lobortis, venenatis mauris. Proin luctus gravida risus, non fermentum orci vulputate et. Vivamus
-        hendrerit eros quis libero pharetra, ut suscipit metus convallis. Nunc faucibus luctus mattis. Suspendisse et
-        mauris mi. Proin suscipit eget risus a pretium. Donec nec elit id felis consequat dapibus sagittis quis massa.
-        Etiam vitae scelerisque magna. Phasellus sagittis ultricies odio. Mauris lorem tellus, euismod vel viverra ut,
-        lobortis eu eros. Sed fermentum enim vel lacus placerat, eget posuere urna porttitor. Aenean non sollicitudin
-        enim. Maecenas porta enim in elementum euismod. Vivamus odio turpis, sollicitudin sit amet varius nec, malesuada
-        ut urna.
+        If you are <em>really</em> that curious, you can read more about me <Link href="/about" target="_self">here</Link>.
       </p>
+
+      <p>That's it, have fun!</p>
     </section>
   </Container>
 </Main>
