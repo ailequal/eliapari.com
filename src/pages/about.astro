@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import ailequal from "../assets/ailequal.png";
 import Container from "../components/Container.astro";
 import Link from "../components/Link.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
@@ -8,6 +10,8 @@ import Main from "../layouts/Main.astro";
 <Main title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <Container size="sm">
     <section class="ae-prose">
+      <Image class="mx-auto mt-0 rounded-sm" width={240} height={240} src={ailequal} alt="ailequal" />
+
       <h1>Something about me</h1>
 
       <p>
