@@ -5,7 +5,7 @@
 <form
   class="flex flex-col gap-6"
   data-netlify="true"
-  netlify-honeypot
+  netlify-honeypot="bot-field"
   name="contact-me"
   method="POST"
   action="/contact-me/success"
@@ -15,8 +15,6 @@
       Don't fill this out if you're human: <input name="bot-field" />
     </label>
   </p>
-
-  <input type="hidden" name="form-name" value="contact-me" />
 
   <fieldset class="flex flex-col gap-1 max-w-sm">
     <label for="name">Name</label>
