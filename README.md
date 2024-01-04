@@ -1,5 +1,7 @@
 # Astro Starter Kit: Blog
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bb24b18e-c40f-409d-9cb1-14529be9c17b/deploy-status)](https://app.netlify.com/sites/earnest-boba-262592/deploys)
+
 ```
 npm create astro@latest -- --template blog
 ```
