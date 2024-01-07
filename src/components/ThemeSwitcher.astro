@@ -41,26 +41,18 @@
   const moon = document.getElementById("moon");
 
   if (sun && moon) {
-    const init = () => {
-      if (localStorage.theme === "dark") setTheme("dark");
-      else setTheme("light");
-    };
-
-    const setTheme = (theme: "dark" | "light", withLocalStorage: boolean = false) => {
-      if (withLocalStorage) localStorage.theme = theme === "dark" ? "dark" : "light";
-
+    const syncTheme = (theme: "dark" | "light") => {
+      localStorage.theme = theme;
       moon.style.display = theme === "dark" ? "inline-block" : "none";
       sun.style.display = theme === "dark" ? "none" : "inline-block";
     };
 
     const toggleTheme = () => {
-      if (localStorage.theme === "dark") setTheme("light", true);
-      else setTheme("dark", true);
-
+      syncTheme(localStorage.theme === "dark" ? "light" : "dark");
       document.documentElement.classList.toggle("dark");
     };
 
-    init();
+    syncTheme(localStorage.theme || "light");
 
     sun.addEventListener("click", toggleTheme);
     moon.addEventListener("click", toggleTheme);
