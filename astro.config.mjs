@@ -14,6 +14,6 @@ export default defineConfig({
     sitemap({
       filter: (page) => page !== "https://www.eliapari.com/contact-me/success/",
     }),
-    tailwind(),
+    tailwind({ applyBaseStyles: false }),
   ],
 });
