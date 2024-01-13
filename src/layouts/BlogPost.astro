@@ -1,84 +1,69 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
 import CalendarPub from "../components/CalendarPub.astro";
 import CalendarUpdated from "../components/CalendarUpdated.astro";
 import Clock from "../components/Clock.astro";
 import Container from "../components/Container.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE } from "../consts";
+import Main from "./Main.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, heroAlt, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, image, readingTime } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={`${title} - ${SITE_TITLE}`} description={description} image={heroImage?.src} />
-  </head>
+<Main title={`${title} - ${SITE_TITLE}`} description={description} image={image?.data.src}>
+  <Container size="sm">
+    <section class="ae-prose">
+      {
+        image?.data && (
+          <Image
+            class="mt-0"
+            width={image.data.width}
+            height={image.data.height}
+            src={image.data || "#"}
+            alt={image.alt || ""}
+          />
+        )
+      }
 
-  <body class="ae-body">
-    <Header />
+      <h1 class="title">{title}</h1>
 
-    <main class="mb-12 flex-grow">
-      <Container size="sm">
-        <section class="ae-prose">
-          {
-            heroImage && (
-              <Image
-                class="mt-0"
-                width={heroImage.width}
-                height={heroImage.height}
-                src={heroImage || "#"}
-                alt={heroAlt || ""}
-              />
-            )
-          }
+      <div class="flex flex-wrap items-center justify-around gap-4">
+        <div class="cursor-default" title="Published on">
+          <CalendarPub />
+          &nbsp;
+          <FormattedDate date={pubDate} />
+        </div>
 
-          <h1 class="title">{title}</h1>
-
-          <div class="flex flex-wrap items-center justify-around gap-4">
-            <div class="cursor-default" title="Published on">
-              <CalendarPub />
+        {
+          updatedDate && (
+            <div class="cursor-default" title="Updated on">
+              <CalendarUpdated />
               &nbsp;
-              <FormattedDate date={pubDate} />
+              <FormattedDate date={updatedDate} />
             </div>
+          )
+        }
 
-            {
-              updatedDate && (
-                <div class="cursor-default" title="Updated on">
-                  <CalendarUpdated />
-                  &nbsp;
-                  <FormattedDate date={updatedDate} />
-                </div>
-              )
-            }
+        {
+          readingTime && (
+            <div class="cursor-default" title="Estimated reading time">
+              <Clock />
+              &nbsp;
+              <span>{readingTime}</span>
+            </div>
+          )
+        }
+      </div>
 
-            {
-              readingTime && (
-                <div class="cursor-default" title="Estimated reading time">
-                  <Clock />
-                  &nbsp;
-                  <span>{readingTime}</span>
-                </div>
-              )
-            }
-          </div>
+      <hr />
 
-          <hr />
+      <slot />
 
-          <slot />
-
-          <hr />
-        </section>
-      </Container>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      <hr />
+    </section>
+  </Container>
+</Main>

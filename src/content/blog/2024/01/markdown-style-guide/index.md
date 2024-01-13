@@ -3,9 +3,10 @@ title: "Markdown Style Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "Jan 01 2024"
 updatedDate: "Jan 02 2024"
-heroImage: "./hero.png"
-heroAlt: "Markdown Style Guide"
-tags: []
+image:
+  data: "./hero.png"
+  alt: "Markdown Style Guide"
+tags: ["markdown", "sample", "astro"]
 draft: true
 ---
 

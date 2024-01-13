@@ -1,7 +1,7 @@
 {
   "name": "eliapari-com",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
@@ -12,11 +12,11 @@
     "prettier:write": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.1",
+    "@astrojs/rss": "^4.0.2",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.1.1",
+    "astro": "^4.1.2",
     "markdown-it": "^14.0.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/markdown-it": "^13.0.7",
     "@types/sanitize-html": "^2.9.5",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.1",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-tailwindcss": "^0.5.11"
   },

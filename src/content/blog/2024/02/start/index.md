@@ -2,7 +2,7 @@
 title: "Start"
 description: "There is always a beginning"
 pubDate: "Jan 02 2024"
-tags: []
+tags: ["start", "astro", "hello-world"]
 draft: true
 ---
 

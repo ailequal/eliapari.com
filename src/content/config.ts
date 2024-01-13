@@ -14,14 +14,18 @@ const blog = defineCollection({
         .string()
         .optional()
         .transform((str) => (str ? new Date(str) : undefined)),
-      heroImage: image()
-        .refine((img) => img.width >= 1280 && img.height >= 720, {
-          message: "The heroImage must always have a 16:9 aspect ratio (1280x720 at least).",
+      image: z
+        .object({
+          data: image().refine((img) => img.width >= 1280 && img.height >= 720, {
+            message: "The heroImage must always have a 16:9 aspect ratio (1280x720 at least).",
+          }),
+          alt: z.string(),
         })
         .optional(),
-      heroAlt: z.string().optional(),
       readingTime: z.string().optional(),
-      tags: z.array(z.string()).default([]),
+      tags: z
+        .array(z.string().refine((tag) => !tag.includes(" "), { message: "Tags cannot contain spaces." }))
+        .default([]),
       draft: z.boolean().default(false),
     }),
 });
