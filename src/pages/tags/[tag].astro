@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Main from "../../layouts/Main.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", (post) => !post.data.draft);
+  const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
+  // TODO: Sort tags alphabetically.
+  return uniqueTags.map((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Main title={`${tag} - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <div>
+    <p>Posts tagged with {tag}</p>
+    <ul>
+      {
+        posts.map((post) => (
+          // TODO: Create a BlogPostPreview layout??
+          <li>
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Main>

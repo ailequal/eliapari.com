@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Main from "../../layouts/Main.astro";
+
+const posts = await getCollection("blog", (post) => !post.data.draft);
+const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
+// TODO: Sort by most recent or alphabetically??
+const prettyTags = uniqueTags.map((tag) => {
+  const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+
+  return {
+    name: tag,
+    count: filteredPosts.length,
+  };
+});
+---
+
+<Main title={`Tags - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <div>
+    <h1>Tags</h1>
+
+    <ul>
+      {
+        prettyTags.map((tag) => (
+          <li>
+            <a href={`/tags/${tag.name}`}>
+              {tag.name} ({tag.count})
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Main>
