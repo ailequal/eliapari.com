@@ -3,10 +3,10 @@ title: "Markdown Style Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "Jan 01 2024"
 updatedDate: "Jan 02 2024"
-image:
-  data: "./hero.png"
-  alt: "Markdown Style Guide"
-tags: ["markdown", "sample", "astro"]
+# image:
+#   data: "./hero.png"
+#   alt: "Markdown Style Guide"
+tags: ["markdown", "sample"]
 draft: true
 ---
 
@@ -34,9 +34,9 @@ Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptio
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-## Images
+<!-- ## Images -->
 
-![This is a placeholder description](./hero.png)
+<!-- ![This is a placeholder description](./hero.png) -->
 
 ## Blockquotes
 
