@@ -10,7 +10,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "prettier:check-fix": "prettier --check . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
+    "prettier:write": "prettier --write .",
+    "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.2",
