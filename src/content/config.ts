@@ -22,11 +22,15 @@ const blog = defineCollection({
           alt: z.string(),
         })
         .optional(),
-      readingTime: z.string().optional(),
       tags: z
-        .array(z.string().refine((tag) => !tag.includes(" "), { message: "Tags cannot contain spaces." }))
+        .array(
+          z
+            .string()
+            .refine((tag) => !tag.includes(" ") && tag !== "", { message: "Tags cannot contain spaces or be empty." })
+        )
         .default([]),
       draft: z.boolean().default(false),
+      readingTime: z.string().optional(),
     }),
 });
 
