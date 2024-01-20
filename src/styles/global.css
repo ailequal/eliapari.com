@@ -15,6 +15,14 @@ body {
   min-width: 320px;
 }
 
+input,
+textarea,
+button,
+a,
+pre {
+  @apply focus:outline-none focus:ring focus:ring-ae-pink;
+}
+
 @layer components {
   .ae-body {
     @apply flex
