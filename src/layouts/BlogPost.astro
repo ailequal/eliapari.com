@@ -11,7 +11,7 @@ import Main from "./Main.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, image, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, image, tags, readingTime } = Astro.props;
 ---
 
 <Main title={`${title} - ${SITE_TITLE}`} description={description} image={image?.data.src}>
@@ -31,32 +31,46 @@ const { title, description, pubDate, updatedDate, image, readingTime } = Astro.p
 
       <h1 class="title">{title}</h1>
 
-      <div class="flex flex-wrap items-center justify-around gap-4">
-        <div class="cursor-default" title="Published on">
-          <CalendarPub />
-          &nbsp;
-          <FormattedDate date={pubDate} />
+      <div>
+        <div class="mb-4 flex flex-wrap items-center justify-around gap-4">
+          <div class="cursor-default" title="Published on">
+            <CalendarPub />
+            &nbsp;
+            <FormattedDate date={pubDate} />
+          </div>
+
+          {
+            updatedDate && (
+              <div class="cursor-default" title="Updated on">
+                <CalendarUpdated />
+                &nbsp;
+                <FormattedDate date={updatedDate} />
+              </div>
+            )
+          }
         </div>
 
-        {
-          updatedDate && (
-            <div class="cursor-default" title="Updated on">
-              <CalendarUpdated />
-              &nbsp;
-              <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
+        <div class="flex flex-wrap items-center justify-around gap-4">
+          {
+            readingTime && (
+              <div class="cursor-default" title="Estimated reading time">
+                <Clock />
+                &nbsp;
+                <span>{readingTime}</span>
+              </div>
+            )
+          }
 
-        {
-          readingTime && (
-            <div class="cursor-default" title="Estimated reading time">
-              <Clock />
-              &nbsp;
-              <span>{readingTime}</span>
-            </div>
-          )
-        }
+          <ul class="m-0 flex flex-wrap items-center gap-2 p-0">
+            {
+              tags.map((tag) => (
+                <li class="m-0 inline-block p-0">
+                  <a href={`/tags/${tag}`}>#{tag}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
 
       <hr />
