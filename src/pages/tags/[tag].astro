@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import Container from "../../components/Container.astro";
+import PostList from "../../components/PostList.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Main from "../../layouts/Main.astro";
 
@@ -7,9 +9,10 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog", (post) => !post.data.draft);
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
-  // TODO: Sort tags alphabetically.
   return uniqueTags.map((tag) => {
-    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+    const filteredPosts = posts
+      .filter((post) => post.data.tags.includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
     return {
       params: { tag },
@@ -23,17 +26,11 @@ const { posts } = Astro.props;
 ---
 
 <Main title={`${tag} - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
-  <div>
-    <p>Posts tagged with {tag}</p>
-    <ul>
-      {
-        posts.map((post) => (
-          // TODO: Create a BlogPostPreview layout??
-          <li>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <Container size="sm">
+    <section>
+      <h1 class="mb-16 text-center text-6xl font-bold">#{tag}</h1>
+
+      {posts.length > 0 && <PostList posts={posts} />}
+    </section>
+  </Container>
 </Main>

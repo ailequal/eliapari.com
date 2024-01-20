@@ -1,0 +1,30 @@
+---
+import CalendarPub from "./CalendarPub.astro";
+import FormattedDate from "./FormattedDate.astro";
+import Link from "./Link.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="flex flex-col gap-8">
+  {
+    posts.map((post) => (
+      <li class="flex flex-col gap-1">
+        <div class="flex cursor-default items-center" title="Published on">
+          <CalendarPub />
+          &nbsp;
+          <FormattedDate class="text-lg" date={post.data.pubDate} />
+        </div>
+
+        <Link class="w-fit text-xl font-bold" href={`/blog/${post.slug}`}>
+          {post.data.title}
+        </Link>
+      </li>
+    ))
+  }
+</ul>

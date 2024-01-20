@@ -1,9 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import CalendarPub from "../../components/CalendarPub.astro";
 import Container from "../../components/Container.astro";
-import FormattedDate from "../../components/FormattedDate.astro";
-import Link from "../../components/Link.astro";
+import PostList from "../../components/PostList.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Main from "../../layouts/Main.astro";
 
@@ -17,23 +15,9 @@ const posts = (await getCollection("blog", (post) => !post.data.draft)).sort(
     <section>
       <h1 class="mb-16 text-center text-6xl font-bold">Blog</h1>
 
-      <ul class="flex flex-col gap-8">
-        {
-          posts.map((post) => (
-            <li class="flex flex-col gap-1">
-              <div class="flex cursor-default items-center" title="Published on">
-                <CalendarPub />
-                &nbsp;
-                <FormattedDate class="text-lg" date={post.data.pubDate} />
-              </div>
+      <!-- TODO: Add here somewhere the redirect to the tags section??! -->
 
-              <Link class="w-fit text-xl font-bold" href={`/blog/${post.slug}/`}>
-                {post.data.title}
-              </Link>
-            </li>
-          ))
-        }
-      </ul>
+      {posts.length > 0 ? <PostList posts={posts} /> : <p class="text-center text-4xl">No posts yet!</p>}
     </section>
   </Container>
 </Main>

@@ -1,0 +1,24 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+  tags: {
+    name: string;
+    count: number;
+  }[];
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="flex flex-col gap-8">
+  {
+    tags.map((tag) => (
+      <li class="flex flex-col gap-1">
+        <Link class="w-fit text-xl font-bold" href={`/tags/${tag.name}`}>
+          {`#${tag.name} (${tag.count})`}
+        </Link>
+      </li>
+    ))
+  }
+</ul>
