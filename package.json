@@ -1,8 +1,14 @@
 {
   "name": "eliapari-com",
-  "type": "module",
   "version": "1.0.0",
+  "description": "My little corner on the web.",
+  "homepage": "https://github.com/ailequal/eliapari.com",
   "license": "GPL-3.0-only",
+  "author": {
+    "name": "Elia Pari",
+    "url": "https://www.eliapari.com"
+  },
+  "type": "module",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
