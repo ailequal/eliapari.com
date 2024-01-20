@@ -16,8 +16,8 @@ const blog = defineCollection({
         .transform((str) => (str ? new Date(str) : undefined)),
       image: z
         .object({
-          data: image().refine((img) => img.width >= 1280 && img.height >= 720, {
-            message: "The heroImage must always have a 16:9 aspect ratio (1280x720 at least).",
+          data: image().refine((img) => img.width / img.height === 16 / 9 && img.width >= 1280 && img.height >= 720, {
+            message: "The heroImage must always have a 16:9 aspect ratio (with resolution of 1280x720 at least).",
           }),
           alt: z.string(),
         })
@@ -28,7 +28,7 @@ const blog = defineCollection({
             .string()
             .refine((tag) => !tag.includes(" ") && tag !== "", { message: "Tags cannot contain spaces or be empty." })
         )
-        .default([]),
+        .refine((tags) => tags.length >= 1 && tags.length <= 3, { message: "Set between 1 up to 3 tags per post." }),
       draft: z.boolean().default(false),
       readingTime: z.string().optional(),
     }),
