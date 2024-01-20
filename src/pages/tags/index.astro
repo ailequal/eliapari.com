@@ -1,36 +1,41 @@
 ---
 import { getCollection } from "astro:content";
+import Container from "../../components/Container.astro";
+import Link from "../../components/Link.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Main from "../../layouts/Main.astro";
 
 const posts = await getCollection("blog", (post) => !post.data.draft);
 const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
-// TODO: Sort by most recent or alphabetically??
-const prettyTags = uniqueTags.map((tag) => {
-  const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+const prettyTags = uniqueTags
+  .map((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
 
-  return {
-    name: tag,
-    count: filteredPosts.length,
-  };
-});
+    return {
+      name: tag,
+      count: filteredPosts.length,
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Main title={`Tags - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
-  <div>
-    <h1>Tags</h1>
+  <Container size="sm">
+    <section>
+      <h1 class="mb-16 text-center text-6xl font-bold">Tags</h1>
 
-    <ul>
-      {
-        prettyTags.map((tag) => (
-          <li>
-            <a href={`/tags/${tag.name}`}>
-              {tag.name} ({tag.count})
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+      <ul class="flex flex-col gap-8">
+        {
+          prettyTags.map((tag) => (
+            <li class="flex flex-col gap-1">
+              <Link class="w-fit text-xl font-bold" href={`/tags/${tag.name}`}>
+                {`#${tag.name} (${tag.count})`}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </Container>
 </Main>
