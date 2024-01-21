@@ -1,8 +1,8 @@
 ---
-import CalendarPub from "./CalendarPub.astro";
+import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import Link from "./Link.astro";
-import type { CollectionEntry } from "astro:content";
+import CalendarPub from "./icons/CalendarPub.astro";
 
 interface Props {
   posts: CollectionEntry<"blog">[];

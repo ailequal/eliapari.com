@@ -15,11 +15,11 @@ body {
   min-width: 320px;
 }
 
-input,
-textarea,
-button,
 a,
-pre {
+button,
+input,
+pre,
+textarea {
   @apply focus:outline-none focus:ring focus:ring-ae-pink;
 }
 
