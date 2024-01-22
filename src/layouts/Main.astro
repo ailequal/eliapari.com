@@ -1,6 +1,6 @@
 ---
-import BaseHead from "../components/common/BaseHead.astro";
 import Footer from "../components/common/Footer.astro";
+import Head from "../components/common/Head.astro";
 import Header from "../components/common/Header.astro";
 
 interface Props {
@@ -14,9 +14,7 @@ const { title, description, image } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} image={image} />
-  </head>
+  <Head title={title} description={description} image={image} />
 
   <body class="ae-body">
     <Header />
