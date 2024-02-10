@@ -9,7 +9,7 @@ import FormattedDate from "../components/ui/FormattedDate.astro";
 import { SITE_TITLE } from "../consts";
 import Main from "./Main.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & { children: any };
 
 const { title, description, pubDate, updatedDate, image, tags, readingTime } = Astro.props;
 ---

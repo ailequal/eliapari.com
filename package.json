@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "prettier:check": "prettier --check .",
@@ -21,21 +21,23 @@
     "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.2",
+    "@astrojs/check": "^0.5.2",
+    "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.2.1",
+    "astro": "^4.3.5",
     "markdown-it": "^14.0.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "sanitize-html": "^2.11.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.7",
-    "@types/sanitize-html": "^2.9.5",
-    "prettier": "^3.2.4",
+    "@types/sanitize-html": "^2.11.0",
+    "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.11"
   },
