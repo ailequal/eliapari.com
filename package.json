@@ -1,6 +1,6 @@
 {
   "name": "eliapari-com",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "My little corner on the web.",
   "homepage": "https://github.com/ailequal/eliapari.com",
   "license": "GPL-3.0-only",
@@ -21,16 +21,16 @@
     "prettier:write-fix": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.2",
+    "@astrojs/check": "^0.5.6",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.3.5",
+    "astro": "^4.4.8",
     "markdown-it": "^14.0.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
-    "sanitize-html": "^2.11.0",
+    "sanitize-html": "^2.12.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
