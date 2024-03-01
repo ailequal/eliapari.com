@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0 - 2024-03-01
+
+- Update - Removed pretty-feed-v3.xsl.
+- Update - Removed contact-me page.
+- Update - Updated package dependencies.
+
 ## 1.0.1 - 2024-02-10
 
 - Add - Custom focus input rule.
