@@ -23,7 +23,6 @@ export async function GET(context: any) {
         link: `/blog/${post.slug}/`,
         content: sanitizeHtml(parser.render(post.body)),
       })),
-    stylesheet: "/pretty-feed-v3.xsl",
     customData: `<language>en-us</language>`,
   });
 }
