@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 - 2024-03-01
+
+- Update - Changed npm required version range.
+
 ## 1.1.1 - 2024-03-01
 
 - Update - Node 18 is now required.
