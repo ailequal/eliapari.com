@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - 2024-03-01
+
+- Update - Node 18 is now required.
+
 ## 1.1.0 - 2024-03-01
 
 - Update - Removed pretty-feed-v3.xsl.
