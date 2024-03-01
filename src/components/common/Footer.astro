@@ -1,5 +1,4 @@
 ---
-import Email from "../icons/Email.astro";
 import Feed from "../icons/Feed.astro";
 import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
@@ -14,12 +13,6 @@ const today = new Date();
   <Container>
     <div class="block py-2 text-lg xsm:flex xsm:items-center xsm:justify-between">
       <ul class="mb-6 flex items-center justify-center gap-7 xsm:mb-0 lg:gap-12">
-        <li>
-          <Link href="/contact-me" target="_self" title="Contact me" aria-label="Contact me">
-            <Email size="w-8" />
-          </Link>
-        </li>
-
         <li>
           <Link href="/feed.xml" target="_self" title="Feed" aria-label="Feed">
             <Feed size="w-8" />

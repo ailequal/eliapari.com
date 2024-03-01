@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /contact-me/success/
+Disallow:
 
 Sitemap: https://www.eliapari.com/sitemap-index.xml
