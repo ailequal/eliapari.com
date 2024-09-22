@@ -15,6 +15,7 @@ export default defineConfig({
     shikiConfig: { theme: "dark-plus" }, // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
   },
   integrations: [sitemap(), tailwind({ applyBaseStyles: false })],
+  server: { port: 4321 },
   devToolbar: { enabled: false },
   output: "static",
 });
