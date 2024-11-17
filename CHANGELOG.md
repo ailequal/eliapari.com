@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 - 2024-11-18
+
+- Update - Updated packages, node version, and home title.
+
 ## 1.1.2 - 2024-03-01
 
 - Update - Changed npm required version range.
