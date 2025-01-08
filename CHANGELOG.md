@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 - 2025-01-08
+
+- Update - Updated to Astro 5.
+
 ## 1.2.0 - 2024-11-18
 
 - Update - Updated packages, node version, and home title.
