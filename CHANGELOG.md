@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 - 2025-04-13
+
+- Update - Minor changes to home and footer.
+
 ## 1.2.1 - 2025-01-08
 
 - Update - Updated to Astro 5.
