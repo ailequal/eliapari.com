@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 - 2025-05-10
+
+- Add - Published 2025-05 zy-stats.
+
 ## 1.2.2 - 2025-04-13
 
 - Update - Minor changes to home and footer.
