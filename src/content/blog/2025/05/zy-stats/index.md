@@ -2,7 +2,7 @@
 title: "zy-stats"
 description: "Fetch Zyxel's stats from the CLI."
 pubDate: "2025-05-10"
-updatedDate: "2025-05-12"
+updatedDate: "2025-05-29"
 tags: ["nodejs", "cli", "zyxel"]
 draft: false
 ---
@@ -23,6 +23,8 @@ The final result is available here: [ailequal/zy-stats](https://github.com/aileq
 ![zy-stats](./zy-stats.png)
 
 Among the available option flags that I have implemented, there is `--log` for logging the stats into a dedicated log file. While the Zyxel's web interface already offers some logging capabilities, this tool potentially gives you more control over it.
+
+If you want to learn about my journey achieving this solution, check out this article on my [company's tech blog](https://tech.sparkfabrik.com/en/blog/zy-stats).
 
 P.S. The code is far from perfect, but it works so far (at least with this specific Zyxel model), so I decided to publish it anyway.
 
