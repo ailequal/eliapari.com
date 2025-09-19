@@ -11,8 +11,8 @@ const today = new Date();
 
 <footer>
   <Container>
-    <div class="block py-2 text-lg xsm:flex xsm:items-center xsm:justify-between">
-      <ul class="mb-6 flex items-center justify-center gap-7 xsm:mb-0 lg:gap-12">
+    <div class="xsm:flex xsm:items-center xsm:justify-between block py-2 text-lg">
+      <ul class="xsm:mb-0 mb-6 flex items-center justify-center gap-7 lg:gap-12">
         <li>
           <Link href="/feed.xml" target="_self" title="Feed" aria-label="Feed">
             <Feed size="w-8" />
@@ -38,7 +38,7 @@ const today = new Date();
         </li>
       </ul>
 
-      <div class="text-right xsm:text-left">
+      <div class="xsm:text-left text-right">
         <span>&copy;{today.getFullYear()} | Elia Pari</span>
       </div>
     </div>

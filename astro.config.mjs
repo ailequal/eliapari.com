@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
@@ -14,8 +14,9 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime], // https://docs.astro.build/en/recipes/reading-time
     shikiConfig: { theme: "dark-plus" }, // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
   },
-  integrations: [sitemap(), tailwind({ applyBaseStyles: false })],
+  integrations: [sitemap()],
   server: { port: 4321 },
   devToolbar: { enabled: false },
   output: "static",
+  vite: { plugins: [tailwindcss()] },
 });

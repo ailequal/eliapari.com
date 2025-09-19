@@ -1,6 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* TODO: Consider implementing native prefix. */
+/*  @link https://tailwindcss.com/docs/styling-with-utility-classes#using-the-prefix-option */
+
+@theme {
+  /* Breakpoints */
+  --breakpoint-xsm: 420px;
+
+  /* Colors */
+  --color-ae-ailequal: #007bad;
+  --color-ae-black: #393939;
+  --color-ae-gray: #747369;
+  --color-ae-white: #e8e6df;
+  --color-ae-red: #f2777a;
+  --color-ae-yellow: #ffcc66;
+  --color-ae-blue: #6699cc;
+  --color-ae-pink: #cc99cc;
+}
+
+@utility prose-ae {
+  --tw-prose-body: var(--color-ae-black);
+  --tw-prose-headings: var(--color-ae-black);
+  --tw-prose-lead: var(--color-ae-black);
+  --tw-prose-links: var(--color-ae-pink);
+  --tw-prose-bold: var(--color-ae-black);
+  --tw-prose-counters: var(--color-ae-black);
+  --tw-prose-bullets: var(--color-ae-black);
+  --tw-prose-hr: var(--color-ae-black);
+  --tw-prose-quotes: var(--color-ae-black);
+  --tw-prose-quote-borders: var(--color-ae-pink);
+  --tw-prose-captions: var(--color-ae-black);
+  --tw-prose-code: var(--color-ae-black);
+  --tw-prose-pre-code: var(--color-ae-white);
+  --tw-prose-pre-bg: var(--color-ae-black);
+  --tw-prose-th-borders: var(--color-ae-black);
+  --tw-prose-td-borders: var(--color-ae-black);
+  --tw-prose-invert-body: var(--color-ae-white);
+  --tw-prose-invert-headings: var(--color-ae-white);
+  --tw-prose-invert-lead: var(--color-ae-white);
+  --tw-prose-invert-links: var(--color-ae-pink);
+  --tw-prose-invert-bold: var(--color-ae-white);
+  --tw-prose-invert-counters: var(--color-ae-white);
+  --tw-prose-invert-bullets: var(--color-ae-white);
+  --tw-prose-invert-hr: var(--color-ae-white);
+  --tw-prose-invert-quotes: var(--color-ae-white);
+  --tw-prose-invert-quote-borders: var(--color-ae-pink);
+  --tw-prose-invert-captions: var(--color-ae-white);
+  --tw-prose-invert-code: var(--color-ae-white);
+  --tw-prose-invert-pre-code: var(--color-ae-black);
+  --tw-prose-invert-pre-bg: var(--color-ae-white);
+  --tw-prose-invert-th-borders: var(--color-ae-white);
+  --tw-prose-invert-td-borders: var(--color-ae-white);
+}
 
 html,
 body {
@@ -20,30 +74,13 @@ button,
 input,
 pre,
 textarea {
-  @apply focus:outline-none focus:ring focus:ring-ae-pink;
+  @apply focus:ring-ae-pink focus:ring-3 focus:outline-hidden;
 }
 
-@layer components {
-  .ae-body {
-    @apply flex
-    min-h-screen
-    flex-col
-    bg-ae-white
-    text-ae-black
-    selection:bg-ae-yellow
-    selection:text-ae-black
-    dark:bg-ae-black
-    dark:text-ae-white
-    dark:selection:bg-ae-yellow
-    dark:selection:text-ae-black;
-  }
+@utility ae-body {
+  @apply bg-ae-white text-ae-black selection:bg-ae-yellow selection:text-ae-black dark:bg-ae-black dark:text-ae-white dark:selection:bg-ae-yellow dark:selection:text-ae-black flex min-h-screen flex-col;
+}
 
-  .ae-prose {
-    @apply prose
-    prose-ae
-    m-auto
-    dark:prose-invert
-    md:prose-lg
-    lg:prose-xl;
-  }
+@utility ae-prose {
+  @apply prose prose-ae dark:prose-invert md:prose-lg lg:prose-xl m-auto;
 }

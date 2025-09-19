@@ -10,20 +10,20 @@ import Main from "../layouts/Main.astro";
 <Main title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <Container size="sm" marginBottom="mb-16">
     <section class="flex flex-col items-center">
-      <Image class="mb-8 rounded-sm" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
+      <Image class="mb-8 rounded-xs" width={240} height={240} src={EliaPari} alt={SITE_TITLE} />
 
       <h1 class="mb-6 text-6xl font-bold">{SITE_TITLE}</h1>
 
       <h2 class="mb-16 text-4xl font-bold">Software Engineer</h2>
 
-      <div class="flex rounded-sm border-2 border-ae-black dark:border-ae-white">
-        <div class="h-12 w-12 bg-ae-black"></div>
-        <div class="h-12 w-12 bg-ae-gray"></div>
-        <div class="h-12 w-12 bg-ae-white"></div>
-        <div class="h-12 w-12 bg-ae-red"></div>
-        <div class="h-12 w-12 bg-ae-yellow"></div>
-        <div class="h-12 w-12 bg-ae-blue"></div>
-        <div class="h-12 w-12 bg-ae-pink"></div>
+      <div class="border-ae-black dark:border-ae-white flex rounded-xs border-2">
+        <div class="bg-ae-black h-12 w-12"></div>
+        <div class="bg-ae-gray h-12 w-12"></div>
+        <div class="bg-ae-white h-12 w-12"></div>
+        <div class="bg-ae-red h-12 w-12"></div>
+        <div class="bg-ae-yellow h-12 w-12"></div>
+        <div class="bg-ae-blue h-12 w-12"></div>
+        <div class="bg-ae-pink h-12 w-12"></div>
       </div>
     </section>
   </Container>

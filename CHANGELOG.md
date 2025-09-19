@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3 - 2025-09-19
+
+- Update - Updated dependencies and aligned Tailwind CSS with new configuration.
+
 ## 1.3.2 - 2025-05-29
 
 - Update - Updated 2025-05 zy-stats.

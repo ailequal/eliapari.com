@@ -1,7 +1,7 @@
 <svg
   id="moon"
   xmlns="http://www.w3.org/2000/svg"
-  class="icon icon-tabler icon-tabler-moon-stars hidden w-8 cursor-pointer stroke-ae-blue stroke-1"
+  class="icon icon-tabler icon-tabler-moon-stars stroke-ae-blue hidden w-8 cursor-pointer stroke-1"
   viewBox="0 0 24 24"
   fill="none"
   stroke-linecap="round"
@@ -17,7 +17,7 @@
 <svg
   id="sun"
   xmlns="http://www.w3.org/2000/svg"
-  class="icon icon-tabler icon-tabler-sunset-2 hidden w-8 cursor-pointer stroke-ae-red stroke-1"
+  class="icon icon-tabler icon-tabler-sunset-2 stroke-ae-red hidden w-8 cursor-pointer stroke-1"
   viewBox="0 0 24 24"
   fill="none"
   stroke-linecap="round"
@@ -45,14 +45,21 @@
       localStorage.theme = theme;
       moon.style.display = theme === "dark" ? "inline-block" : "none";
       sun.style.display = theme === "dark" ? "none" : "inline-block";
+      document.documentElement.classList.toggle("dark", theme === "dark");
     };
 
     const toggleTheme = () => {
       syncTheme(localStorage.theme === "dark" ? "light" : "dark");
-      document.documentElement.classList.toggle("dark");
     };
 
-    syncTheme(localStorage.theme || "light");
+    const getInitialTheme = (): "dark" | "light" => {
+      if (localStorage.theme === "dark" || localStorage.theme === "light") {
+        return localStorage.theme;
+      }
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    };
+
+    syncTheme(getInitialTheme());
 
     sun.addEventListener("click", toggleTheme);
     moon.addEventListener("click", toggleTheme);
