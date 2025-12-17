@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4 - 2025-12-17
+
+- Update - Updated dependencies.
+
 ## 1.3.3 - 2025-09-19
 
 - Update - Updated dependencies and aligned Tailwind CSS with new configuration.
