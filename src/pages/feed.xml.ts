@@ -20,8 +20,8 @@ export async function GET(context: any) {
         title: post.data.title,
         description: post.data.description,
         pubDate: post.data.pubDate,
-        link: `/blog/${post.slug}/`,
-        content: sanitizeHtml(parser.render(post.body)),
+        link: `/blog/${post.id}/`,
+        content: sanitizeHtml(parser.render(post.body ?? "")),
       })),
     customData: `<language>en-us</language>`,
   });
