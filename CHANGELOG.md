@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0 - 2026-03-174
+
+- Update - Updated to Astro 6.
+
 ## 1.3.4 - 2025-12-17
 
 - Update - Updated dependencies.
